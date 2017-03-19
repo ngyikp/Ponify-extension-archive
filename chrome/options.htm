@@ -1,0 +1,196 @@
+<!--
+
+	options.htm is part of Ponify (Chrome Extension)
+
+	Copyright 2011 Ben Ashton <ben_ashton@gmx.co.uk>
+
+	Ponify is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	Ponify is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with Ponify; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA 02110-1301, USA.
+	
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link href="css/options.css" rel="stylesheet" type="text/css" />
+	<script src="src/init.js" type="text/JavaScript"></script>
+	<script type="text/JavaScript" src="src/options.js"></script>
+	<title>Ponify Preferences</title>
+</head>
+<body>
+	<div id="container">
+		<div id="header"></div>
+		<div id="left">
+			<ul id="tabs">
+				<li id="t0"><a href="#0">General Options</a></li>
+				<li id="t1"><a href="#1">Replacement List</a></li>
+				<li id="t2"><a href="#2">Website List</a></li>
+				<li id="t3"><a href="#3">About</a></li>
+			</ul>
+			<div id="options">
+				<div id="p0">
+					<div class="toolbox">
+						<span>General Options</span>
+					</div>
+					<div id="gen_opt">
+						<div class="option">
+							<div>Highlighting</div>
+							<ul class="switch">
+								<li id="high00">Enabled</li>
+								<li id="high01">Disabled</li>
+							</ul>
+							<div id="colour_picker">
+								<input id="colour_picker_input" type="text" />
+							</div>
+						</div>
+						<div class="option">
+							<div>Tooltips</div>
+							<ul class="switch">
+								<li id="high10">Enabled</li>
+								<li id="high11">Disabled</li>
+							</ul>
+						</div>
+						<div class="option">
+							<div>Pseudo Threading</div>
+							<ul class="switch">
+								<li id="thr0">Enabled</li>
+								<li id="thr1">Disabled</li>
+							</ul>
+						</div>
+						<div class="option">
+							<div>Replacement List</div>
+							<div class="btn" id="rep_defaults">Restore Defaults</div>
+						</div>
+						<div class="option">
+							<div>Website List</div>
+							<div class="btn" id="web_defaults">Restore Defaults</div>
+						</div>
+					</div>
+				</div>
+				<div id="p1">
+					<div id="rl_enable" class="message">
+						<span>Replacement List</span>
+						<br /><br />
+						There are currently no replacments configured; click here if you wish to configure the list of words to ponify.
+						<br /><br />
+						<div id="rl_enable_button" class="btn">Configure Websites</div>
+					</div>
+					<div id="rl_conf">
+						<div class="toolbox">
+							<span>Replacement List</span>
+							<div class="add" id="addr">Add Row</div>
+							<div class="del" id="delr">Delete Checked</div>
+						</div>
+						<table id="rl">
+							<colgroup>
+								<col></col>
+								<col></col>
+								<col></col>
+							</colgroup>
+						</table>
+					</div>
+				</div>
+				<div id="p2">
+					<div id="wl_enable" class="message">
+						<span>Website List</span>
+						<br /><br />
+						The website list is currently empty; click here if you wish to configure which sites are ponified.
+						<br /><br />
+						<div id="wl_enable_button" class="btn">Configure Websites</div>
+					</div>
+					<div id="wl_conf">
+						<div class="toolbox">
+							<span>Website List</span>
+							<div class="add" id="addw">Add Row</div>
+							<div class="del" id="delw">Delete Checked</div>
+							<ul>
+								<li id="blackw">Blacklist</li>
+								<li id="whitew">Whitelist</li>
+							</ul>
+						</div>
+						<table id="wl">
+							<colgroup>
+								<col></col>
+								<col></col>
+							</colgroup>
+						</table>
+					</div>
+				</div>
+				<div id="p3">
+					<div class="message">
+						<span>About</span>
+						<br /><br />
+						Unfortunately, whilst the herd is growing exponentially, there are still a few stragglers on the internet. 
+						<br /><br />
+						These stragglers will insist upon using archaic words like "everyone," and refuse to update their vocabularies. Combined with the internet's intrinsic lack of grammar, this can become quite irritating.
+						<br /><br />
+						But fear not, for at last there is a solution! Ponify is a tool for converting everypony on the internet into a brony. With it you can enhance your internet experience, and say goodbye to all of that outdated language.
+						<br /><br />
+						- Ben Ashton
+						<br /><br />
+						<a href="copying.htm">Licence</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="right">
+			<div class="menu">
+				<div><a>Help</a></div>
+			</div>
+			<div id="help">
+				<div id="h0">
+					Here you can modify general settings and restore the defaults.
+					<br /><br />
+					The highlighting option can be used to highlight text that has been ponified. You can select the colour that is used by entering any valid 3 or 6 digit hexadecimal colour code.
+					<br /><br />
+					When enabled, the tooltips option will show the original (non-ponified) text when you hover your mouse over any text that has been ponified.
+					<br /><br />
+					Highlighting and Tooltips will slow ponify down slightly, and it is possible that they may have unintended results on some websites. The change in performance should be unnoticeable on modern computers.
+					<br /><br />
+					If you do notice a loss of performance, or find that large pages cause the browser to momentarily freeze, try enabling "Pseudo Threading."
+				</div>
+				<div id="h1">
+					Here you can modify the list of words that will be replaced on websites. You can add and remove replacements, as well as edit current replacements. Should you wish to restore the default settings, navigate to the General Options tab and press the "Restore Defaults" under "Replacement List".
+					<br /><br />
+					To add a new replacement, click the "Add Row" button. A new row will appear in the list where you can enter the new data.
+					<br /><br />
+					To remove one or more words from the list, select the relevant check boxes in the first column and click the "Delete Checked" button. To select all of the items in the list, check the box in the top row.
+					<br /><br />
+					To edit any of the entries, click the word that you wish to change, and type your alteration.
+				</div>
+				<div id="h2">
+					Here you can configure which websites are ponified and which ones aren't. There are two methods for configuring this: You can either have a blacklist or a whitelist. A blacklist means that the websites you specify in the list will not be ponified, and all others will. A whitelist means that the websites you specify in the list will be ponified, and all others won't.
+					<br /><br />
+					To add a website to the list, click the "Add Row" button. A new row will appear where you can enter the new data.
+					<br /><br />
+					To remove one or more websites from the list, select the relevant check boxes in the first column and click the "Delete Checked" button. To select all of the items in the list, check the box in the top row.
+					<br /><br />
+					To edit any of the entries, click the entry that you wish to change and type your alteration.
+				</div>
+				<div id="h3" style="text-align: center;">
+					<a href="http://fav.me/d3xbwvg">
+						<img src="img/flutter.png" style="margin-top: 20px;" alt="Fluttershy" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+</body>
+</html>

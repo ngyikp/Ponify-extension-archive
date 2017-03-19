@@ -1,0 +1,4 @@
+content	ponify			chrome/content/
+locale	ponify	en-US	chrome/locale/en-US/
+
+overlay  chrome://browser/content/browser.xul chrome://ponify/content/browser.xul

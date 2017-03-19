@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+
+	about.xul is part of Ponify (Firefox Add-on)
+
+	Copyright 2011 Ben Ashton <ben_ashton@gmx.co.uk>
+
+	Ponify is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	Ponify is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with Ponify; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA 02110-1301, USA.
+	
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="ponifyabout" title="About Ponify" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<vbox style="padding: 10px;">
+		<hbox>
+			<spacer flex="1" />
+			<image src="chrome://ponify/skin/85.png" />
+			<spacer flex="1" />
+		</hbox>
+		<label value="Ponify" style="font-size: 2em; text-align: center; padding-top: 5px;" />
+		<label style="text-align: center; width: 300px; padding: 5px 10px 0 10px;">A tool for replacing human words with a ponified variation</label>
+		<label value="Ben Ashton" style="font-size: 0.9em; text-align: center; padding-top: 5px;" />
+		<label value="http://pterocorn.blogspot.com" href="http://pterocorn.blogspot.com" style="text-align: center; padding-top: 5px;" class="text-link" />
+		<hbox pack="center" style="padding-top: 10px;">
+			<button label="License" oncommand="window.open('chrome://ponify/content/copying.htm', '', '')" />
+			<button label="Close" oncommand="window.close();" />
+		</hbox>
+	</vbox>
+</window>

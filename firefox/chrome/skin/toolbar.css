@@ -1,0 +1,19 @@
+#ponify-tbutton{
+	-moz-box-orient: horizontal;
+}
+
+#ponify-tbutton[enabled="false"]{
+  list-style-image: url("chrome://ponify/skin/24gray.png");
+}
+
+toolbar[iconsize="small"] #ponify-tbutton[enabled="false"]{
+  list-style-image: url("chrome://ponify/skin/16gray.png");
+}
+
+#ponify-tbutton{
+  list-style-image: url("chrome://ponify/skin/24.png");
+}
+
+toolbar[iconsize="small"] #ponify-tbutton{
+  list-style-image: url("chrome://ponify/skin/16.png");
+}

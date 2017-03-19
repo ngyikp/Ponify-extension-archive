@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+
+	browser.xul is part of Ponify (Firefox Add-on)
+
+	Copyright 2011 Ben Ashton <ben_ashton@gmx.co.uk>
+
+	Ponify is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	Ponify is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with Ponify; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA 02110-1301, USA.
+	
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://ponify/skin/toolbar.css" type="text/css"?>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<script type="application/javascript" src="chrome://ponify/content/main.js" />
+	
+	<toolbarpalette id='BrowserToolbarPalette'>
+		<toolbarbutton id='ponify-tbutton' type='menu' class='toolbarbutton-1' label='Ponify' enabled="true" tooltiptext='Ponify'>
+			<menupopup onpopupshowing="Ponify.menuShowing();">
+				<menuitem id="ponify_enabled" label="Enable Ponify" oncommand="Ponify.menuModified(this, 0);" type="checkbox" />
+				<menuseparator />
+				<menuitem id="ponify_page" label="Ponify this page" type="checkbox" checked="false" oncommand="Ponify.menuModified(this, 1);" />
+				<menuitem id="ponify_domain" label="Ponify this domain" type="checkbox" checked="false" oncommand="Ponify.menuModified(this, 2);" />
+				<menuseparator />
+				<menuitem label="Preferences" oncommand="Ponify.openPrefs()" />
+				<menuseparator />
+				<menuitem label="About" oncommand="Ponify.openAbout()" />
+			</menupopup>
+		</toolbarbutton>
+	</toolbarpalette>
+</overlay>

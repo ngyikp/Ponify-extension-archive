@@ -1,0 +1,29 @@
+{
+  "content_scripts": [ {
+      "exclude_globs": [  ],
+      "include_globs": [ "*" ],
+      "run_at": "document_end",
+      "js": [ "src/replace.js" ],
+      "all_frames": true,
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "browser_action": {
+      "default_icon": "img/19.png",
+      "default_popup": "popup.htm",
+      "default_title": "Ponify"
+   },
+  "icons": {
+      "16": "img/16.png",
+      "48": "img/48.png"
+  },
+  "manifest_version": 2,
+  "name": "Ponify",
+  "background_page": "background.htm",
+  "options_page": "options.htm",
+  "version": "0.95",
+  "update_url": "http://bena.mooo.com/update.php?b=chrome",
+  "description": "Ponify is a tool for replacing all human words with a ponified variation",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ]
+}

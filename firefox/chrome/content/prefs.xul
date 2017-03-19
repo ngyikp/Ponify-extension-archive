@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+
+	prefs.xul is part of Ponify (Firefox Add-on)
+
+	Copyright 2011 Ben Ashton <ben_ashton@gmx.co.uk>
+
+	Ponify is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	Ponify is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with Ponify; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA 02110-1301, USA.
+	
+-->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<prefwindow id="PonifyPrefs" title="Ponify Preferences" width="600" height="350" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/javascript" src="chrome://ponify/content/prefs.js" />
+
+	<prefpane id="gen_opt" label="General Options" image="chrome://ponify/skin/32gen.png">
+		<preferences>  
+			<preference id="pref_highlight" name="ponify.highlight" type="bool"/>  
+			<preference id="pref_highlight_colour" name="ponify.highlight_colour" type="string"/>  
+			<preference id="pref_tooltips" name="ponify.tooltips" type="bool"/>  
+			<preference id="pref_pseudo_threading" name="ponify.pseudo_threading" type="bool"/>
+		</preferences>
+		<grid flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				<row style="margin-bottom: 0.5em;">
+					<label value="Behavior" style="font-weight: bold;" />
+				</row>
+				<row>
+					<checkbox label="Highlighting" preference="pref_highlight" />
+					<hbox>
+						<colorpicker type="button" preference="pref_highlight_colour" />
+						<spacer flex="1" />
+					</hbox>
+				</row>
+				<row>
+					<checkbox label="Tooltips" preference="pref_tooltips" />
+				</row>
+				<row>
+					<checkbox label="Pseudo Threading" preference="pref_pseudo_threading" />
+				</row>
+				<row style="margin-top: 1.5em; margin-bottom: 0.8em;">
+					<label value="Defaults" style="font-weight: bold;" />
+				</row>
+				<row>
+					<label value="Replacement List" />
+					<button label="Restore Defaults" oncommand="rep_view.restoreDefaults();" />
+				</row>
+				<row>
+					<label value="Website List" />
+					<button label="Restore Defaults" oncommand="web_view.restoreDefaults();" />
+				</row>
+			</rows>
+		</grid>
+	</prefpane>
+	<prefpane id="rep_lis" label="Replacement List" image="chrome://ponify/skin/32rep.png">
+		<preferences>  
+			<preference id="pref_replace" name="ponify.replace" instantApply="true" type="string"/>
+		</preferences>
+		<vbox flex="1">
+			<hbox style="margin-bottom: 0.4em;" align="center">
+				<label value="Replacements" style="font-weight: bold;" />
+				<spacer flex="1" />
+				<button label="Delete Selected" oncommand="rep_view.deleteSelected();" />
+				<button label="Add Row" oncommand="rep_view.newRow();" />
+			</hbox>
+			<tree id="replaceTree" flex="1" preference-editable="true" preference="pref_replace" onsynctopreference="return rep_view.onSyncToPreference();" onsyncfrompreference="return rep_view.onSyncFromPreference();" editable="true" hidecolumnpicker="true">
+				<treecols>
+					<treecol id="0" label="Find" primary="true" flex="1" onclick="rep_view.onSort(this, 0);" sortDirection="ascending" />
+					<treecol id="1" label="Replace" primary="true" flex="1" onclick="rep_view.onSort(this, 1);" sortDirection="ascending" />
+				</treecols>
+				<treechildren />
+			</tree>
+		</vbox>
+	</prefpane>
+	<prefpane id="web_lis" label="Website List" image="chrome://ponify/skin/32web.png">
+		<preferences>  
+			<preference id="pref_websites" name="ponify.websites" type="string"/>
+			<preference id="pref_wlist_type" name="ponify.wlist_type" type="int"/>
+		</preferences>
+		<vbox flex="1">
+			<hbox style="margin-bottom: 0.4em;" align="center">
+				<label value="Websites" style="font-weight: bold;" />
+				<spacer flex="1" />
+				<radiogroup id="wlist" orient="horizontal" preference-editable="true" preference="pref_wlist_type" onsynctopreference="return wlistPreferenceSync(0);" onsyncfrompreference="return wlistPreferenceSync(1);">
+					<radio label="Blacklist" />
+					<radio label="Whitelist" />
+				</radiogroup>
+				<button label="Delete Selected" oncommand="web_view.deleteSelected();" />
+				<button label="Add Row" oncommand="web_view.newRow();" />
+			</hbox>
+			<tree id="websiteTree" flex="1" preference-editable="true" preference="pref_websites" onsynctopreference="return web_view.onSyncToPreference();" onsyncfrompreference="return web_view.onSyncFromPreference();" editable="true" hidecolumnpicker="true">
+				<treecols>
+					<treecol id="lweb" label="Website" primary="true" flex="1" onclick="web_view.onSort(this, 0);" sortDirection="ascending" />
+				</treecols>
+				<treechildren />
+			</tree>
+		</vbox>
+	</prefpane>
+</prefwindow>

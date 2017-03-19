@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="ponify@pterocorn.blogspot.com"
+                   em:name="Ponify"
+                   em:version="0.96"
+                   em:description="A tool for replacing human words with a ponified variation."
+                   em:optionsURL="chrome://ponify/content/prefs.xul"
+                   em:iconURL="chrome://ponify/skin/48.png"
+                   em:icon64URL="chrome://ponify/skin/64.png"
+                   em:updateURL="http://bena.mooo.com/update.php?b=firefox"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDngNC64G4uk8Kr3o4J02uSnSWiAB5pHCw0t96Qi+CdzVdJpu6lpYJt6qzj6+WLhz7a0DccXqKEIhwz4sdYUesxrC3IUu7sDUKX78RVr9VNGZWunJpzWvUgh4xpW6xbF0iD4JzhBv8Zv9f/nZn1c9DvcUIBrLWBjPngvFSJM41czwIDAQAB">
+    <em:targetApplication RDF:resource="rdf:#$XwB5Z3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$XwB5Z3"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="4.0"
+                   em:maxVersion="10.*" />
+</RDF:RDF>
